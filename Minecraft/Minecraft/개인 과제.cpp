@@ -4,7 +4,7 @@
 
 int main()
 {
-
+	
 	BlockID stone_brick = createBricks(BRICKS_STONE);
 	BlockID spruce_plank = createPlanks(PLANKS_SPRUCE);
 	WoolID white_wool = createWool(COLOR_WHITE);
@@ -45,9 +45,9 @@ int main()
 
 	int xlen = abs(lx - fx), ylen = abs(ly - fy), zlen = abs(lz - fz); //각 좌표의 길이 구하기
 
-	int floor = 0, currentY = 0; // 층의 수와 현재 y좌표의 위치
+	int floorY = 0, currentY = 0; // 층의 수와 현재 y좌표의 위치
 
-
+	
 	// 바닥 짓는 과정
 	for (int x = fx + 2; x <= lx - 2; x++) // x 좌표
 	{
@@ -93,7 +93,7 @@ int main()
 		}
 
 	}
-
+	
 	for (int z = fz + 2; z <= lz - 2; z++) // z 좌표
 	{
 		if (z == fz + 2 || z == lz - 2) // 바닥의 끝 부분
@@ -398,10 +398,10 @@ int main()
 
 		}
 
-		floor++; // 층의 수 구하기
+		floorY++; // 층의 수 구하기
 
 	}
-	currentY = fy + (6 * floor); // 지붕을 지을 y 좌표
+	currentY = fy + (6 * floorY); // 지붕을 지을 y 좌표
 
 	//지붕 짓기
 
